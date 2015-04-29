@@ -1,4 +1,4 @@
-=begin
+
 
 class bikes
   def if it breaks
@@ -19,4 +19,4 @@ class van
 *class capacity
 *class rental
 
-=end
+
