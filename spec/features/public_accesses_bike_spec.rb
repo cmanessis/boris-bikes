@@ -3,8 +3,10 @@ require 'docking_station'
 feature "member of the public accesess bike" do
   scenario "docking station releases a working bike" do
     docking_station= DockingStation.new
+    docking_station.dock Bike.new
     bike = docking_station.release_bike
     expect(bike).to be_working
+    #make a work method with a double that is true e.g let, gives you an opprot
   end
 
 
