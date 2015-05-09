@@ -2,9 +2,9 @@ require_relative 'bike'
 
 class DockingStation
 
-  attr_accessor 'capacity'
+  attr_accessor :capacity
 
-  def initialize capacity=20
+  def initialize capacity = 20
     @bikes = []
     @capacity = capacity
   end
@@ -15,9 +15,15 @@ class DockingStation
   end
 
   def release_bike
-    fail 'No bikes available' if empty?
-    @bikes.pop
+    if empty?
+      fail 'No bikes available'
+    elsif @bikes.all? {|bike| bike.working? == false}
+      fail 'No working bikes available'
+    else
+      @bikes.pop
+    end
   end
+
 
 private
 
